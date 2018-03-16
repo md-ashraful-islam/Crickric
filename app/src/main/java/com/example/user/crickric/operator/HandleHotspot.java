@@ -18,8 +18,10 @@ public class HandleHotspot {
         toggleHotspot(context);
     }
     public static void closeHotspot(Context context){
-        if(isWifiOn(context))
+        if(isWifiOn(context)){
             toggleHotspot(context);
+            System.out.println("Closing wifi");
+        }
     }
 
 
