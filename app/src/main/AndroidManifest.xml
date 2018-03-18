@@ -9,24 +9,45 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="CRICKRICK"
+        android:label="CRICKRIC"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.user.crickric.HomeActivity">
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.user.crickric.InputGameActivity">
+        <activity android:name=".InputGameActivity">
             <intent-filter>
                 <action android:name="com.example.user.crickric.InputGameActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        </application>
+        <activity android:name=".Input1stTeamInfoActivity">
+            <intent-filter>
+                <action android:name="com.example.user.crickric.Input1stTeamInfoActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Input2ndTeamInfoActivity">
+            <intent-filter>
+                <action android:name="com.example.user.crickric.Input2ndTeamInfoActivity" />
+
+                <category android:name="android.intent.category.ALTERNATIVE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".InputBatFirstActivity">
+            <intent-filter>
+                <action android:name="com.example.user.crickric.InputBatFirstActivity" />
+
+                <category android:name="android.intent.category.ALTERNATIVE" />
+            </intent-filter>
+        </activity>
+    </application>
 
 </manifest>

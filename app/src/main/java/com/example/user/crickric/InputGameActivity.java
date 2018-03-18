@@ -1,5 +1,6 @@
 package com.example.user.crickric;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,64 +8,98 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class InputGameActivity extends AppCompatActivity {
+import com.example.user.crickric.playerAndGame.Game;
 
+public class InputGameActivity extends AppCompatActivity {
+    String gameName=null;
+    int totalOver=0;
+    int playerNumber = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_game);
     }
-    public void nextButtonClickOnAction(View view) {
+
+    public boolean isGameNameCorrect(){
         AutoCompleteTextView gameName=(AutoCompleteTextView) findViewById(R.id.gameName);
-        EditText totalOverText = (EditText) findViewById(R.id.totalOver);
-        EditText playerNumberText = (EditText) findViewById(R.id.playerNumber);
+        this.gameName=gameName.getText().toString();
         TextView gameNameErrorText =(TextView) findViewById(R.id.gameNameErrorText);
-        TextView playerNumberErrorText =(TextView) findViewById(R.id.playerNumberErrorText);
-        TextView totalOverErrorText =(TextView) findViewById(R.id.totalOverErrorText);
-        boolean allCorrect=true;
-        System.out.println("Name: "+gameName.getText());
-        if(gameName.getText().equals("")){
+        if(this.gameName.length()==0){
             gameNameErrorText.setVisibility(View.VISIBLE);
-            allCorrect=false;
             System.out.println("Error in name");
+            return false;
         }
-        else {
-            gameNameErrorText.setVisibility(View.INVISIBLE);
-        }
+        gameNameErrorText.setVisibility(View.INVISIBLE);
+        return true;
+    }
+
+    public boolean isPlayerNumberCorrect(){
+        EditText playerNumberText = (EditText) findViewById(R.id.playerNumber);
+        TextView playerNumberErrorText =(TextView) findViewById(R.id.playerNumberErrorText);
 
         try{
-            int playerNumber=Integer.parseInt(playerNumberText.getText().toString());
+            playerNumber=Integer.parseInt(playerNumberText.getText().toString());
             if(playerNumber<2 || playerNumber>12){
-                allCorrect=false;
                 playerNumberErrorText.setVisibility(View.VISIBLE);
                 System.out.println("Error in player");
-            }else {
-                playerNumberErrorText.setVisibility(View.INVISIBLE);
+                return false;
             }
+            playerNumberErrorText.setVisibility(View.INVISIBLE);
+            return true;
+
         }catch(NumberFormatException e){
-            allCorrect=false;
             playerNumberErrorText.setVisibility(View.VISIBLE);
             System.out.println("Error in player");
-
+            return false;
         }
+    }
+
+    public boolean isTotalOverCorrect(){
+        EditText totalOverText = (EditText) findViewById(R.id.totalOver);
+        TextView totalOverErrorText =(TextView) findViewById(R.id.totalOverErrorText);
+
         try{
-            int totalOver=Integer.parseInt(totalOverText.getText().toString());
+            totalOver=Integer.parseInt(totalOverText.getText().toString());
             if(totalOver<1 || totalOver>90){
-                allCorrect=false;
                 totalOverErrorText.setVisibility(View.VISIBLE);
                 System.out.println("Error in over");
-            }else {
-                totalOverErrorText.setVisibility(View.INVISIBLE);
+                return false;
             }
+            totalOverErrorText.setVisibility(View.INVISIBLE);
+            return true;
         }catch(NumberFormatException e){
-            allCorrect=false;
             totalOverErrorText.setVisibility(View.VISIBLE);
             System.out.println("Error in over");
+            return false;
         }
+    }
 
-        if(allCorrect){
+    public boolean isAllCorrect(){
+        if(isGameNameCorrect()){
+            if(isPlayerNumberCorrect()){
+                if(isTotalOverCorrect())
+                    return true;
+            }
+            else {
+                isTotalOverCorrect();
+            }
+        }
+        else {
+            isPlayerNumberCorrect();
+            isTotalOverCorrect();
+        }
+        return false;
+    }
+
+    public void nextButtonClickOnAction(View view) {
+        if(isAllCorrect()){
             System.out.println("All ok");
+            Game.getInstance().setName(gameName);
+            Game.getInstance().setNoOfPlayerInOneTeam(playerNumber);
+            Game.getInstance().setTotalNoOfOver(totalOver);
+            Intent intent=new Intent(getApplicationContext(),Input1stTeamInfoActivity.class);
+            startActivity(intent);
+            return;
         }
-
     }
 }

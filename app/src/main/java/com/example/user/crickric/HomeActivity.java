@@ -12,7 +12,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
     }
 
     public void watchGameButtonClick(View view) {
@@ -21,7 +21,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void operateGameButtonClick(View view) {
         HandleHotspot.createHotspot(this);
-        Intent intent=new Intent("com.example.user.crickric.InputGameActivity");
+        Intent intent=new Intent(getApplicationContext(),InputGameActivity.class);
         startActivity(intent);
         System.out.println("Bye");
     }

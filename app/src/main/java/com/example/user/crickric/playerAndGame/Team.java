@@ -14,6 +14,13 @@ public class Team {
         this.name = name;
         this.playerCount=0;
     }
+
+    public Team(String name, int playerNumber) {
+        this.name = name;
+        this.playerNumber = playerNumber;
+        players=new Player[playerNumber];
+    }
+
     public void addPlayer(Player player){
         players[playerCount]=player;
         playerCount++;
