@@ -59,12 +59,10 @@ public class Input2ndTeamInfoActivity extends AppCompatActivity {
     }
 
     public void setSecondTeam(){
-        Team secondTeam=new Team(editText[0].getText().toString(),Game.getInstance().getNoOfPlayerInOneTeam());
+        Game.getInstance().setSecondTeam(new Team(editText[0].getText().toString(),Game.getInstance().getNoOfPlayerInOneTeam()));
         for(int i=0;i<Game.getInstance().getNoOfPlayerInOneTeam();i++){
-            secondTeam.addPlayer(new Player(editText[i+1].getText().toString()));
-
+            Game.getInstance().getSecondTeam().addPlayer(editText[i+1].getText().toString());
         }
-        Game.getInstance().setSecondTeam(secondTeam);
     }
 
     public boolean isAllInputCorrect(){
@@ -76,31 +74,13 @@ public class Input2ndTeamInfoActivity extends AppCompatActivity {
         return true;
     }
 
-    public void takeTossResult(){
-        AlertDialog.Builder alertDialog=new AlertDialog.Builder(this);
-        alertDialog.setTitle("Who will bat first?");
-        CharSequence[] items=new CharSequence[2];
-        items[0]=Game.getInstance().getFirstTeam().getName();
-        items[1]=Game.getInstance().getSecondTeam().getName();
-        alertDialog.setItems(items, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if(which==0){
-                    Game.getInstance().setFirstTeamBatfirst(true);
-                }else {
-                    Game.getInstance().setFirstTeamBatfirst(false);
-                }
-            }
-        });
-        alertDialog.create().show();
-    }
-
     public void nextButtonClickOnAction(View view) {
         if(isAllInputCorrect()){
             System.out.println(editText[0].getText().toString());
             setSecondTeam();
-            //takeTossResult();
-            Intent intent=new Intent(getApplicationContext(),InputWhoBatFirst.class);
+            //System.out.println(Game.getInstance().getFirstTeam());
+            //System.out.println(Game.getInstance().getSecondTeam());
+            Intent intent=new Intent(getApplicationContext(),InputBatFirstActivity.class);
             startActivity(intent);
         }
         else {

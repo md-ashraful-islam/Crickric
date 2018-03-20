@@ -57,12 +57,11 @@ public class Input1stTeamInfoActivity extends AppCompatActivity {
     }
 
     public void setFirstTeam(){
-        Team firstTeam=new Team(editText[0].getText().toString(),Game.getInstance().getNoOfPlayerInOneTeam());
+        Game.getInstance().setFirstTeam(new Team(editText[0].getText().toString(),Game.getInstance().getNoOfPlayerInOneTeam()));
         for(int i=0;i<Game.getInstance().getNoOfPlayerInOneTeam();i++){
-            firstTeam.addPlayer(new Player(editText[i+1].getText().toString()));
+            Game.getInstance().getFirstTeam().addPlayer(editText[i+1].getText().toString());
 
         }
-        Game.getInstance().setFirstTeam(firstTeam);
     }
 
     public boolean isAllInputCorrect(){
@@ -78,6 +77,8 @@ public class Input1stTeamInfoActivity extends AppCompatActivity {
         if(isAllInputCorrect()){
             System.out.println(editText[0].getText().toString());
             setFirstTeam();
+            //System.out.println(Game.getInstance().getFirstTeam());
+            //System.out.println(Game.getInstance().getSecondTeam());
             Intent intent=new Intent(getApplicationContext(),Input2ndTeamInfoActivity.class);
             startActivity(intent);
         }

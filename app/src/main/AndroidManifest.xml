@@ -38,14 +38,21 @@
             <intent-filter>
                 <action android:name="com.example.user.crickric.Input2ndTeamInfoActivity" />
 
-                <category android:name="android.intent.category.ALTERNATIVE" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".InputBatFirstActivity">
             <intent-filter>
                 <action android:name="com.example.user.crickric.InputBatFirstActivity" />
 
-                <category android:name="android.intent.category.ALTERNATIVE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ChoosePlayerActivity">
+            <intent-filter>
+                <action android:name="com.example.user.crickric.ChoosePlayerActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

@@ -10,9 +10,9 @@ public class Game {
     private Team secondTeam;
     private int totalNoOfOver;
     private int noOfPlayerInOneTeam;
-    private boolean firstTeamBatfirst;
+    private boolean firstTeamBatting;
     
-    private static final Game instance = new Game();
+    private static volatile Game instance = new Game();
 
     public static Game getInstance() {
         return instance;
@@ -68,11 +68,11 @@ public class Game {
         this.noOfPlayerInOneTeam = noOfPlayerInOneTeam;
     }
 
-    public boolean isFirstTeamBatfirst() {
-        return firstTeamBatfirst;
+    public boolean isFirstTeamBatting() {
+        return firstTeamBatting;
     }
 
-    public void setFirstTeamBatfirst(boolean firstTeamBatfirst) {
-        this.firstTeamBatfirst = firstTeamBatfirst;
+    public void setFirstTeamBatting(boolean firstTeamBatting) {
+        this.firstTeamBatting = firstTeamBatting;
     }
 }

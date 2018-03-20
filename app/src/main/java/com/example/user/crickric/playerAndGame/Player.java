@@ -155,4 +155,20 @@ public class Player {
     public void setTotalBallPlayed(int totalBallPlayed) {
         this.totalBallPlayed = totalBallPlayed;
     }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "playerType=" + playerType +
+                ", name='" + name + '\'' +
+                ", run=" + run +
+                ", positionOfBatting=" + positionOfBatting +
+                ", bowlingOver=" + bowlingOver +
+                ", wicketTaken=" + wicketTaken +
+                ", givingRun=" + givingRun +
+                ", batted=" + batted +
+                ", insured=" + insured +
+                ", totalBallPlayed=" + totalBallPlayed +
+                '}';
+    }
 }
