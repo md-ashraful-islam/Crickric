@@ -1,8 +1,6 @@
-package com.example.user.crickric;
+package com.example.user.myapplication;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,22 +8,21 @@ import android.widget.TableRow;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.user.crickric.playerAndGame.Game;
-import com.example.user.crickric.playerAndGame.Player;
-import com.example.user.crickric.playerAndGame.Team;
+import com.example.user.crickric.game.Game;
+import com.example.user.crickric.game.Team;
 
-public class Input2ndTeamInfoActivity extends AppCompatActivity {
+public class Input1stTeamInfoActivity extends AppCompatActivity {
     TableRow tableRow[]=new TableRow[11];
     EditText editText[]=new EditText[12];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input2nd_team_info);
+        setContentView(R.layout.activity_input1st_team_info);
         setTableRow();
         setEditText();
     }
-
+    
     public void setTableRow(){
         tableRow[0]=(TableRow) findViewById(R.id.tableRow1);
         tableRow[1]=(TableRow) findViewById(R.id.tableRow2);
@@ -42,10 +39,10 @@ public class Input2ndTeamInfoActivity extends AppCompatActivity {
             tableRow[i].setVisibility(View.INVISIBLE);
         }
     }
-
+    
     public void setEditText(){
-        editText[0]=(EditText) findViewById(R.id.secondTeamName);
-        editText[1]=(EditText) findViewById(R.id.player1);
+        editText[0]=(EditText) findViewById(R.id.firstTeamName);
+        editText[1]=(EditText) findViewById(R.id.batsman1NameText);
         editText[2]=(EditText) findViewById(R.id.player2);
         editText[3]=(EditText) findViewById(R.id.player3);
         editText[4]=(EditText) findViewById(R.id.player4);
@@ -58,10 +55,11 @@ public class Input2ndTeamInfoActivity extends AppCompatActivity {
         editText[11]=(EditText) findViewById(R.id.player11);
     }
 
-    public void setSecondTeam(){
-        Game.getInstance().setSecondTeam(new Team(editText[0].getText().toString(),Game.getInstance().getNoOfPlayerInOneTeam()));
+    public void setFirstTeam(){
+        Game.getInstance().setFirstTeam(new Team(editText[0].getText().toString(),Game.getInstance().getNoOfPlayerInOneTeam()));
         for(int i=0;i<Game.getInstance().getNoOfPlayerInOneTeam();i++){
-            Game.getInstance().getSecondTeam().addPlayer(editText[i+1].getText().toString());
+            Game.getInstance().getFirstTeam().addPlayer(editText[i+1].getText().toString());
+
         }
     }
 
@@ -77,10 +75,10 @@ public class Input2ndTeamInfoActivity extends AppCompatActivity {
     public void nextButtonClickOnAction(View view) {
         if(isAllInputCorrect()){
             System.out.println(editText[0].getText().toString());
-            setSecondTeam();
+            setFirstTeam();
             //System.out.println(Game.getInstance().getFirstTeam());
             //System.out.println(Game.getInstance().getSecondTeam());
-            Intent intent=new Intent(getApplicationContext(),InputBatFirstActivity.class);
+            Intent intent=new Intent(getApplicationContext(),Input2ndTeamInfoActivity.class);
             startActivity(intent);
         }
         else {

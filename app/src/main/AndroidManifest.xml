@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.user.crickric">
+    package="com.example.user.myapplication">
 
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -22,35 +22,56 @@
         </activity>
         <activity android:name=".InputGameActivity">
             <intent-filter>
-                <action android:name="com.example.user.crickric.InputGameActivity" />
+                <action android:name="com.example.user.myapplication.InputGameActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".Input1stTeamInfoActivity">
             <intent-filter>
-                <action android:name="com.example.user.crickric.Input1stTeamInfoActivity" />
+                <action android:name="com.example.user.myapplication.Input1stTeamInfoActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".Input2ndTeamInfoActivity">
             <intent-filter>
-                <action android:name="com.example.user.crickric.Input2ndTeamInfoActivity" />
+                <action android:name="com.example.user.myapplication.Input2ndTeamInfoActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".InputBatFirstActivity">
             <intent-filter>
-                <action android:name="com.example.user.crickric.InputBatFirstActivity" />
+                <action android:name="com.example.user.myapplication.InputBatFirstActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".ChoosePlayerActivity">
             <intent-filter>
-                <action android:name="com.example.user.crickric.ChoosePlayerActivity" />
+                <action android:name="com.example.user.myapplication.ChoosePlayerActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".InputRunActivity">
+            <intent-filter>
+                <action android:name="com.example.user.myapplication.InputRunActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ShowingRunActivity">
+            <intent-filter>
+                <action android:name="com.example.user.myapplication.ShowingRunActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ScorecardActivity">
+            <intent-filter>
+                <action android:name="com.example.user.myapplication.ScorecardActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

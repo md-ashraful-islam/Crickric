@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.user.crickric.Input1stTeamInfoActivity">
+    tools:context=".Input1stTeamInfoActivity">
 
     <TextView
         android:id="@+id/warningText"
@@ -116,7 +116,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
                 <EditText
-                    android:id="@+id/player1"
+                    android:id="@+id/batsman1NameText"
                     android:layout_width="608dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"

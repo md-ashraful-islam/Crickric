@@ -1,4 +1,4 @@
-package com.example.user.crickric;
+package com.example.user.myapplication;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

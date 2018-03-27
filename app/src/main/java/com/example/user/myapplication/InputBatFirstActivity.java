@@ -1,4 +1,4 @@
-package com.example.user.crickric;
+package com.example.user.myapplication;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 
-import com.example.user.crickric.playerAndGame.Game;
+import com.example.user.crickric.game.Game;
 
 public class InputBatFirstActivity extends AppCompatActivity {
     RadioButton team1RadioButton;
@@ -44,9 +44,14 @@ public class InputBatFirstActivity extends AppCompatActivity {
     public boolean setWhoBatFirst(){
         if(team1RadioButton.isChecked()){
             Game.getInstance().setFirstTeamBatting(true);
+            Game.getInstance().getFirstInnings().setBattingTeam(Game.getInstance().getFirstTeam());
+            Game.getInstance().getFirstInnings().setBowlingTeam(Game.getInstance().getSecondTeam());
         }
         else if(team2RadioButton.isChecked()) {
             Game.getInstance().setFirstTeamBatting(false);
+
+            Game.getInstance().getFirstInnings().setBattingTeam(Game.getInstance().getSecondTeam());
+            Game.getInstance().getFirstInnings().setBowlingTeam(Game.getInstance().getFirstTeam());
         }
         else
             return false;
@@ -59,7 +64,7 @@ public class InputBatFirstActivity extends AppCompatActivity {
             //System.out.println(Game.getInstance().getFirstTeam());
             //System.out.println(Game.getInstance().getSecondTeam());
             Intent intent=new Intent(getApplicationContext(),ChoosePlayerActivity.class);
-            intent.putExtra("key","    Choose a opening Batsman");
+            intent.putExtra("key"," Choose first batting Batsman ");
             startActivity(intent);
         }
     }

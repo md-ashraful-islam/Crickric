@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowingRunActivity">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="389dp"
+        android:layout_height="426dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="2dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/firstTeamStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="1stTeam           1000/10 (Over- 85.2)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/secondTeamStatus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="2ndTeam:           1000/10   (Over-90)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/targetText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Target-2000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/requredRunRateText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Required Run Rate: 10.55"
+                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/currentTargetStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Needs 1000 runs in 300 balls"
+                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/currentRunRateText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Current Run Rate: 10.55"
+                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/partneshipText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Partnership : 100 runs"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/lastWicketText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Last Wkt: Batsman Name-Run(Ball)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Batting       R(B)    4s   6s    SR"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/batsman1StatusText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Batsman1       100(100)     10      10    100.00"
+                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/batsman2StatusText"
+                android:layout_width="410dp"
+                android:layout_height="match_parent"
+                android:text="Batsman1       100(100)     10      10    100.00"
+                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="410dp"
+                android:layout_height="match_parent"
+                android:text="Bowling         O       M        R     W"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/bowlerStatusText"
+                android:layout_width="410dp"
+                android:layout_height="match_parent"
+                android:text="Bowler                  100         10        100      10"
+                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+        </TableRow>
+
+    </TableLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/runView"
+        android:layout_width="313dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        app:layout_constraintVertical_bias="0.133">
+
+        <LinearLayout
+            android:id="@+id/runShowingLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"></LinearLayout>
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/inputRunButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="104dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="11dp"
+        android:onClick="inputRunButtonClickOnAction"
+        android:text="Input Run"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/undoButton"
+        app:layout_constraintTop_toBottomOf="@+id/runView" />
+
+    <Button
+        android:id="@+id/scorecardButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="9dp"
+        android:onClick="scorecardButtonClickOnAction"
+        android:text="Scorecard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/undoButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/runView" />
+
+    <Button
+        android:id="@+id/undoButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginBottom="9dp"
+        android:layout_marginTop="11dp"
+        android:onClick="undoButtonClickOnAction"
+        android:text="Undo Last Ball"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/inputRunButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/scorecardButton"
+        app:layout_constraintTop_toBottomOf="@+id/runView" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="407dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="                         Recent Balls:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+        app:layout_constraintBottom_toTopOf="@+id/runView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+</android.support.constraint.ConstraintLayout>

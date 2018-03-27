@@ -1,4 +1,6 @@
-package com.example.user.crickric.playerAndGame;
+package com.example.user.crickric.game;
+
+import com.example.user.crickric.player.Player;
 
 import java.util.Arrays;
 
@@ -11,10 +13,6 @@ public class Team {
     private Player players[];
     private int playerNumber;
     private int playerCount;
-    private int openingBatsmanPosition;
-    private int anotherOpeningBatsmanPosition;
-    private int nextBatsmanPosition;
-    private int nextBowlerPosition;
 
     public Team(String name) {
         this.name = name;
@@ -24,8 +22,18 @@ public class Team {
     public Team(String name, int playerNumber) {
         this.name = name;
         this.playerNumber = playerNumber;
+        initialize();
+    }
+
+    public void initialize(){
         players=new Player[playerNumber];
         playerCount=0;
+    }
+
+    public void initializePlayer(){
+        for(int i=0;i<playerNumber;i++){
+            players[i].initialize();
+        }
     }
 
     public void addPlayer(String name){
@@ -34,17 +42,12 @@ public class Team {
         playerCount++;
     }
 
-    public Player getPlayer(int index){
+    public Player getPlayer(int index) {
         //System.out.println(index+"\t"+players[index]);
         return players[index];
     }
 
-
-    ///////////////
-    /*
-    getter and setter
-    */
-    //////////////
+    ///////////////getter and setter//////////////
 
     public String getName() {
         return name;
@@ -73,40 +76,6 @@ public class Team {
 
     public void setPlayerCount(int playerCount) {
         this.playerCount = playerCount;
-    }
-
-    public int getOpeningBatsmanPosition() {
-        return openingBatsmanPosition;
-    }
-
-    public void setOpeningBatsmanPosition(int openingBatsmanPosition) {
-        this.openingBatsmanPosition = openingBatsmanPosition;
-
-    }
-
-    public int getAnotherOpeningBatsmanPosition() {
-        return anotherOpeningBatsmanPosition;
-    }
-
-    public void setAnotherOpeningBatsmanPosition(int anotherOpeningBatsmanPosition) {
-        this.anotherOpeningBatsmanPosition = anotherOpeningBatsmanPosition;
-
-    }
-
-    public int getNextBatsmanPosition() {
-        return nextBatsmanPosition;
-    }
-
-    public void setNextBatsmanPosition(int nextBatsmanPosition) {
-        this.nextBatsmanPosition = nextBatsmanPosition;
-    }
-
-    public int getNextBowlerPosition() {
-        return nextBowlerPosition;
-    }
-
-    public void setNextBowlerPosition(int nextBowlerPosition) {
-        this.nextBowlerPosition = nextBowlerPosition;
     }
 
     @Override

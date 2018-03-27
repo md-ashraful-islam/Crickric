@@ -1,4 +1,4 @@
-package com.example.user.crickric.playerAndGame;
+package com.example.user.crickric.player;
 
 /**
  * Created by User on 15-Mar-18.

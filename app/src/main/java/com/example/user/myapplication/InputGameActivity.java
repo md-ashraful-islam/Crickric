@@ -1,4 +1,4 @@
-package com.example.user.crickric;
+package com.example.user.myapplication;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.user.crickric.playerAndGame.Game;
+import com.example.user.crickric.game.Game;
 
 public class InputGameActivity extends AppCompatActivity {
     String gameName=null;
@@ -93,6 +93,7 @@ public class InputGameActivity extends AppCompatActivity {
 
     public void nextButtonClickOnAction(View view) {
         if(isAllCorrect()){
+            Game.getInstance().initialize();
             System.out.println("All ok");
             Game.getInstance().setName(gameName);
             Game.getInstance().setNoOfPlayerInOneTeam(playerNumber);
